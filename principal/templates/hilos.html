@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+{%include "navbar.html"%}
+
+<p>Tiempo de ejecución: {{ execution_time }}</p> 
+<div class="container">
+    <form action="{% url 'resultados' %}" id="datos" method="POST"> 
+        <!---{{ form.as_p }}  -->
+        {% csrf_token %}
+        <div class="row">
+            <div class ="col">
+    
+            </div>
+            
+            <div class="col">
+            <br>
+                <div class="card mb-2" style="width:300px">
+                        <label style="text-align: center">Texto 1</label>
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="text" class="form-control" name="input1" placeholder="Ingresa el texto 1" style="width:298px; height:300px;" >
+                </div>
+            </div>
+            <div class ="col">
+    
+            </div>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:center;">
+        <button type="submit" id="guardar" class="btn btn-primary">Consulta hilos</button>
+        </div>
+
+        
+    </form> 
+</div>
+{% endblock %}

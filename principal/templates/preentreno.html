@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+{%include "navbar.html"%}
+{% csrf_token %}
+    <div style="display:flex; justify-content:center; align-items:center;">
+        <div class="row">
+            <div class="col">   
+                <form action="{% url 'secuencial' %}" id="datos" method="POST">{% csrf_token %} 
+                    <div style="display:flex; justify-content:center; align-items:center;">
+                    <button type="submit" id="guardar" class="btn btn-primary">Preentreno Secuencial</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <form action="{% url 'hilos' %}" id="datos" method="POST">{% csrf_token %} 
+                    <div style="display:flex; justify-content:center; align-items:center;">
+                        <select name="select">
+                            <option value=2 selected>2 Hilos</option>
+                            <option value=4>4 Hilos</option>
+                            <option value=6>6 hilos</option>
+                        </select>
+                    <button type="submit" id="guardar" class="btn btn-primary">Preentreno Hilos</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col"> 
+                <form action="{% url 'cuda' %}" id="datos" method="POST">{% csrf_token %} 
+                    <div style="display:flex; justify-content:center; align-items:center;">
+                    <button type="submit" id="guardar" class="btn btn-primary">Preentreno CUDA</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

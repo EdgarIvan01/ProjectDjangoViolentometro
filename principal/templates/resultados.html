@@ -1,0 +1,7 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+{%include "navbar.html"%}
+{% csrf_token %}
+<p>{{ prediccion }} </p>
+{% endblock %}
